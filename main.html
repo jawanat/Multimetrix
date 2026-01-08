@@ -98,16 +98,19 @@
 
         function nastepneZdjecie(kierunek) 
         {
-            if (kierunek === 'prawo') {
+            if( kierunek === 'prawo' ) 
+            {
                 numerZdjecia++;
                 if (numerZdjecia >= zdjecia.length) numerZdjecia = 0;
-            } else {
+            } 
+            else 
+            {
                 numerZdjecia--;
                 if (numerZdjecia < 0) numerZdjecia = zdjecia.length - 1;
             }
         }
 
-        // Automatycznie przewijanie zdjęć
+        // Automatycznie przewijanie
         function startAutomat() 
         {
             clearInterval(automat);
@@ -129,7 +132,8 @@
 
         // Zatrzymywanie po najechaniu myszką 
         const kontener = document.querySelector('.gallery-container');
-        if (kontener) {
+        if( kontener )
+        {
             kontener.addEventListener('mouseenter', () => clearInterval(automat));
             kontener.addEventListener('mouseleave', startAutomat);
         }
@@ -139,7 +143,7 @@
             const login = document.getElementById('username').value;
             const haslo = document.getElementById('password').value;
 
-            if (login === "admin" && haslo === "usterka") 
+            if( login === "admin" && haslo === "usterka" ) 
             {
                 alert("Panel dla klientów premium ( z usługami bez faktury )");
 
@@ -149,7 +153,7 @@
                 const tytul = document.getElementById('tytul-strony');
                 tytul.innerText = "Multimetrix - Usługi (nie)budowlane";
                 
-                // Reset na pierwsze zdjęcie i rest automat przy zmienie panelu
+                // Reset na pierwsze zdjęcie i reset automatu przy zmienie panelu
                 numerZdjecia = 0;
                 pokazZdjecie(); 
                 startAutomat();
