@@ -1,10 +1,165 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Multimetrix-main</title>
-    </head>
-    <body>
-        <h1>Witamy</h1>
-    </body>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Multimetrix - Usługi Budowlane</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="login-panel">
+        Panel: 
+        <input type="text" id="username" placeholder="Login">
+        <input type="password" id="password" placeholder="Hasło">
+        <button onclick="sprawdzLogowanie()">OK</button>
+    </div>
+
+    <header>
+        <div class="container">
+            <h1 id="tytul-strony">Multimetrix - Usługi budowlane</h1>
+            <nav>
+                <ul>
+                    <li><a href="main.html">Strona główna</a></li>
+                    <li><a href="o_nas.html">O nas</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="gallery-section">
+            <h2>Nasze realizacje</h2>
+            
+            <div class="gallery-container">
+                <button class="scroll-btn left" onclick="zmienSlajd('lewo')"> < </button> 
+                
+                <div class="gallery-images">
+                    <img src="img/foto1.jpg" alt="Realizacja budowlana">
+                </div>
+
+                <button class="scroll-btn right" onclick="zmienSlajd('prawo')"> > </button>
+            </div>
+        </section>
+
+        <section class="reviews-section">
+            <h2>Opinie klientów</h2>
+            <ul class="reviews-list">
+                <li>
+                    <p>"Pełen profesjonalizm. Remont skończony przed czasem!"</p>
+                    <span>- Piotr Wiśniewski, Inwestor</span>
+                </li>
+                <li>
+                    <p>"Firma godna zaufania, polecam każdemu."</p>
+                    <span>- Anna Kowalska</span>
+                </li>
+                <li>
+                    <p>"Idealne wykonanie w sensowych pieniądzach!."</p>
+                    <span>- Zbigniew Nowak</span>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Dane logowania: -->
+    <!-- Login: nqzva -->
+    <!-- Hasło: hfgrexn -->
+    <!-- Aby nie było za łatwo login i hasło zostały zaszyfrowane ROT13 -->
+    <!-- Do odszyfrowania można skorzystać ze strony: https://rot13.com/ -->
+    
+    <footer>
+        <div class="contact-info">
+            <h3>Dane kontaktowe</h3>
+            <p>Telefon: 123 456 789</p>
+            <p>Email: biuro@multimetrix.pl</p>
+        </div>
+    </footer>
+    
+    <!-- Dla leniwych dane logowania l: admin, h: usterka -->
+    
+    <script>
+        //--- 1. GALERIA ---
+        const zdjecia = [
+            "foto1.jpg", 
+            "foto2.jpg", 
+            "foto3.jpg", 
+            "foto4.jpg"
+        ];
+        
+        let aktualnyFolder = "img/";
+        let numerZdjecia = 0;
+        const obrazek = document.querySelector('.gallery-images img');
+
+        let automat;
+
+        function pokazZdjecie() 
+        {
+            obrazek.src = aktualnyFolder + zdjecia[numerZdjecia];
+        }
+
+        function nastepneZdjecie(kierunek) 
+        {
+            if (kierunek === 'prawo') {
+                numerZdjecia++;
+                if (numerZdjecia >= zdjecia.length) numerZdjecia = 0;
+            } else {
+                numerZdjecia--;
+                if (numerZdjecia < 0) numerZdjecia = zdjecia.length - 1;
+            }
+        }
+
+        // Automatycznie przewijanie zdjęć
+        function startAutomat() 
+        {
+            clearInterval(automat);
+            automat = setInterval(() => {
+                nastepneZdjecie('prawo');
+                pokazZdjecie();
+            }, 3000);
+        }
+
+        function zmienSlajd(kierunek) 
+        {
+            nastepneZdjecie(kierunek);
+            pokazZdjecie();
+            startAutomat();
+        }
+
+        // Start automatu przy wejściu na stronę
+        startAutomat();
+
+        // Zatrzymywanie po najechaniu myszką 
+        const kontener = document.querySelector('.gallery-container');
+        if (kontener) {
+            kontener.addEventListener('mouseenter', () => clearInterval(automat));
+            kontener.addEventListener('mouseleave', startAutomat);
+        }
+
+        //--- 2. LOGOWANIE (SĄSIEDZI) ---
+        function sprawdzLogowanie() {
+            const login = document.getElementById('username').value;
+            const haslo = document.getElementById('password').value;
+
+            if (login === "admin" && haslo === "usterka") 
+            {
+                alert("Panel dla klientów premium ( z usługami bez faktury )");
+
+                aktualnyFolder = ".tajne/";
+
+                // Zmiana treści nagłówka
+                const tytul = document.getElementById('tytul-strony');
+                tytul.innerText = "Multimetrix - Usługi (nie)budowlane";
+                
+                // Reset na pierwsze zdjęcie i rest automat przy zmienie panelu
+                numerZdjecia = 0;
+                pokazZdjecie(); 
+                startAutomat();
+            } 
+            else 
+            {
+                alert("Błędne hasło! Przeszukaj kod źródłowy, aby dostać się do sekretnego panelu klienta");
+            }
+        }
+    </script>
+
+</body>
 </html>
