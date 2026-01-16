@@ -27,6 +27,31 @@
     </header>
 
     <main>
+        <section class="services-overview">
+        <div class="container">
+            <h2>Specjaliści od wykończeń</h2>
+            <p>Firma Multimetrix to braterska pasja i lata doświadczenia w branży wykończeniowej. Realizujemy wizje naszych klientów, dbając o każdy milimetr powierzchni.</p>
+            
+            <div class="services">
+                <div class="service-item">
+                    <h3>Glazurnictwo</h3>
+                    <p>Precyzyjne układanie płytek i gresu.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Podłogi</h3>
+                    <p>Panele oraz deska barlinecka.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Malowanie</h3>
+                    <p>Gładzie i profesjonalne malowanie wnętrz.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Elektryka</h3>
+                    <p>Nowoczesne instalacje i oświetlenie.</p>
+                </div>
+            </div>
+        </div>
+    </section>
         <section class="gallery-section">
             <h2>Nasze realizacje</h2>
             
@@ -152,7 +177,8 @@
 
                 aktualnyFolder = ".tajne/";
 
-                // Zmiana treści nagłówka
+                // Zmiana treści nagłówka i dodanie klasy dla trybu sąsiadów
+                //document.body.classList.add('sasiad-mode');
                 const tytul = document.getElementById('tytul-strony');
                 tytul.innerText = "Multimetrix - Usługi (nie)budowlane";
                 
