@@ -20,6 +20,7 @@
             <nav>
                 <ul>
                     <li><a href="main.html">Strona główna</a></li>
+                    <li><a href="oferta.html">Oferta</a></li>
                     <li><a href="o_nas.html">O nas</a></li>
                 </ul>
             </nav>
@@ -27,6 +28,31 @@
     </header>
 
     <main>
+        <section class="services-overview">
+        <div class="container">
+            <h2>Specjaliści od wykończeń</h2>
+            <p>Firma Multimetrix to braterska pasja i lata doświadczenia w branży wykończeniowej. Realizujemy wizje naszych klientów, dbając o każdy milimetr powierzchni.</p>
+            
+            <div class="services">
+                <div class="service-item">
+                    <h3>Glazurnictwo</h3>
+                    <p>Precyzyjne układanie płytek i gresu.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Podłogi</h3>
+                    <p>Panele oraz podłoga drewniana.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Malowanie</h3>
+                    <p>Gładzie i profesjonalne malowanie wnętrz.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Elektryka</h3>
+                    <p>Nowoczesne instalacje elektryczne i oświetlenie.</p>
+                </div>
+            </div>
+        </div>
+    </section>
         <section class="gallery-section">
             <h2>Nasze realizacje</h2>
             
@@ -71,6 +97,7 @@
             <h3>Dane kontaktowe</h3>
             <p>Telefon: 123 456 789</p>
             <p>Email: biuro@multimetrix.pl</p>
+            <p>&copy; 2026 Multimetrix Usługi Budowlane. Wszelkie prawa zastrzeżone.</p>
         </div>
     </footer>
     
@@ -149,7 +176,8 @@
 
                 aktualnyFolder = ".tajne/";
 
-                // Zmiana treści nagłówka
+                // Zmiana treści nagłówka i dodanie klasy dla trybu sąsiadów
+                //document.body.classList.add('sasiad-mode');
                 const tytul = document.getElementById('tytul-strony');
                 tytul.innerText = "Multimetrix - Usługi (nie)budowlane";
                 
