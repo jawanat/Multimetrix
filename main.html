@@ -55,8 +55,8 @@
                     <p>Profesjonalne wsparcie techniczne i optymalizacja kosztów inwestycji.</p>
                 </div>
                 <div class="service-item">
-                    <h3>Elektroinstalacje</h3>
-                    <p>Nowoczesne instalacje elektryczne i oświetlenie.</p>
+                    <h3>Wykonanie stolarskie</h3>
+                    <p>Wyrób mebli według Państwa projektu.</p>
                 </div>
             </div>
         </div>
@@ -180,14 +180,14 @@
 
             if( login === "admin" && haslo === "usterka" ) 
             {
-                alert("Panel dla klientów premium ( z usługami bez faktury )");
+                alert("Panel dla klientów z polecenia oraz z usługami bez gwarancji");
 
                 aktualnyFolder = ".tajne/";
 
                 // Zmiana treści nagłówka i dodanie klasy dla trybu sąsiadów
                 document.body.classList.add('sasiad-mode');
                 const tytul = document.getElementById('tytul-strony');
-                tytul.innerText = "Multimetrix - Usługi (nie)budowlane";
+                tytul.innerText = "Multimetrix - Usługi (nie)budowlane bez gwarancji";
                 
                 // Reset na pierwsze zdjęcie i reset automatu przy zmienie panelu
                 numerZdjecia = 0;
