@@ -5,8 +5,8 @@ Projekt strony internetowej zrealizowany w ramach przedmiotu **Techniki Internet
 Celem projektu było stworzenie profesjonalnej wizytówki dla firmy budowlanej, zawierającej galerię realizacji, sekcję opinii oraz dane kontaktowe. Projekt został jednak rozszerzony o niestandardową funkcjonalność JavaScript (mini CTF), która zmienia charakter strony na satyryczny z motywem bajki "Sąsiedzi".
 
 ## 👥 Autorzy 
-* **Jakub Wanat**
-* **Dominik Woźniczyszyn**
+* **Jakub Wanat** https://github.com/jawanat
+* **Dominik Woźniczyszyn** https://github.com/Dom343woz
 
 ## 🚀 Funkcjonalności
 * **Strona Wizytówka:** Responsywny Landing Page dla firmy budowlanej.
